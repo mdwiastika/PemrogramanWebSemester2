@@ -1,0 +1,27 @@
+<?php
+include_once 'connection.php';
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$company = $_POST['company'];
+$position = $_POST['position'];
+$website = $_POST['website'];
+$category = $_POST['category'];
+$street = $_POST['street'];
+$city = $_POST['city'];
+$province = $_POST['province'];
+$postal_code = $_POST['postal_code'];
+$country = $_POST['country'];
+$office_phone = $_POST['office_phone'];
+$home_phone = $_POST['home_phone'];
+$cell_phone = $_POST['cell_phone'];
+$fax_number = $_POST['fax_number'];
+$notes = $_POST['notes'];
+$photo = $_FILES['photo']['name'];
+$photo_tmp = $_FILES['photo']['tmp_name'];
+$photo_path = 'uploads/' . $photo;
+move_uploaded_file($photo_tmp, $photo_path);
+$id = $_POST['id'];
+$sql = "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', company='$company', position='$position', website='$website', category='$category', street='$street', city='$city', province='$province', postal_code='$postal_code', country='$country', office_phone='$office_phone', home_phone='$home_phone', cell_phone='$cell_phone', fax_number='$fax_number', notes='$notes', photo='$photo' WHERE id=$id";
+$db_conn->query($sql);
+header('Location: index.php');

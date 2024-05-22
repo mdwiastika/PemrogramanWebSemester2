@@ -1,0 +1,87 @@
+
+body {
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #1E0342;
+    background-color: wheat;
+}
+
+form {
+    background-color: #9AC8CD;
+    padding: 40px;
+    border-radius: 5px;
+    min-width: 400px;
+    box-shadow: #0E46A3 1px 1px 3px 1px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+input,
+textarea,
+select {
+    padding: 8px;
+    width: 95%;
+}
+
+button {
+    padding: 8px;
+    width: 100%;
+    background-color: limegreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.cancel {
+    padding: 4px;
+    width: 100%;
+    background-color: #141E46;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+.link-text a {
+    color: #0E46A3;
+    text-decoration: none;
+    padding-top: 10px;
+}
