@@ -9,6 +9,12 @@
 
 <body>
     <h1>MVC tanpa framework nihhh!</h1>
+    <h2>List My Journals</h2>
+    <ul>
+        <?php foreach ($journals as $journal) : ?>
+            <li><?= $journal->name ?> (<?= $journal->publisher_year ?>)</li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 
 </html>

@@ -20,14 +20,18 @@ class Router
     public function dispatch()
     {
         $uri = strtok($_SERVER['REQUEST_URI'], '?');
-        $method = $_SERVER['REQUEST_METHOD'];
+        $method =  $_SERVER['REQUEST_METHOD'];
         if (array_key_exists($uri, $this->routes[$method])) {
             $controller = $this->routes[$method][$uri]['controller'];
             $action = $this->routes[$method][$uri]['action'];
             $controller = new $controller();
             $controller->$action();
         } else {
-            throw new \Exception("No route found for URI: $uri");
+            var_dump([
+                'arr' => $this->routes[$method],
+                'uri' => $uri
+            ]);
+            throw new \Exception("No route found for URI: $uri | $method");
         }
     }
 }
