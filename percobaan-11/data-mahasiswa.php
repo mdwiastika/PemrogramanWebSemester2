@@ -27,13 +27,12 @@
                     <th>No </th>
                     <th>NRP</th>
                     <th>Nama</th>
-                    <th>Jenis Kelamin</th>
                     <th>Aksi</th>
                 </tr>
                 <?php
                 include_once 'connection.php';
                 $no = 1;
-                $sql = "SELECT * FROM mahasiswa";
+                $sql = "SELECT * FROM users";
                 $result = pg_query($conn, $sql);
                 while ($row = pg_fetch_assoc($result)) {
                 ?>
@@ -41,7 +40,6 @@
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row['nrp']; ?></td>
                         <td><?php echo $row['nama']; ?></td>
-                        <td><?php echo $row['jenis_kelamin']; ?></td>
                         <td class="center-item">
                             <a href="./show-mahasiswa.php?nrp=<?php echo $row['nrp']; ?>" class="show">Show</a>
                         </td>
